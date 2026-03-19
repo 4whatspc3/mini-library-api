@@ -1,13 +1,10 @@
 import { Router } from "express";
+import { booksController, bookByIdController } from "../controllers/booksController.js";
 
 const bookRouter = Router();
 
-bookRouter.get("/", (req, res) => {
-    res.send("Acessando books")
-});
+bookRouter.get("/", booksController);
 
-bookRouter.get("/:id", (req, res) => {
-    res.send(`Acessando livro de ID ${req.params.id}`)
-});
+bookRouter.get("/:id", bookByIdController);
 
 export default bookRouter;
