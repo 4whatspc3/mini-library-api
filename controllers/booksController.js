@@ -1,19 +1,29 @@
 import { getAllBooks, getBookById } from "../db.js";
+import NotFoundError from "../errors/notFoundError.js";
 
-const booksController = async (req, res) => {
-    const books = await getAllBooks();
+const booksController = async (req, res, next) => {
+    try{
+        const books = await getAllBooks();
 
-    res.json(books);
+        res.json(books);
+    } catch (error) {
+        next(error)
+    }
 };
 
-const bookByIdController = async (req, res) => {
-    const book = await getBookById(req.params.id);
+const bookByIdController = async (req, res, next) => {
+    try{
+        const book = await getBookById(req.params.id);
 
-    if (!book) {
-        return res.status(404).send('Livro não encontrado');
+        if (!book) {
+            throw new NotFoundError('Book not found with the provided ID');
+        }
+
+        res.json(book);
+
+    } catch (error) {
+        next(error);
     }
-
-    res.json(book);
 }
 
 export {booksController, bookByIdController};
