@@ -1,9 +1,19 @@
-const booksController = (req, res) => {
-    res.send("Acessando books");
+import { getAllBooks, getBookById } from "../db.js";
+
+const booksController = async (req, res) => {
+    const books = await getAllBooks();
+
+    res.json(books);
 };
 
-const bookByIdController = (req, res) => {
-    res.send(`Acessando livro de ID ${req.params.id}`)
+const bookByIdController = async (req, res) => {
+    const book = await getBookById(req.params.id);
+
+    if (!book) {
+        return res.status(404).send('Livro não encontrado');
+    }
+
+    res.json(book);
 }
 
 export {booksController, bookByIdController};
