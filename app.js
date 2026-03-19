@@ -1,6 +1,9 @@
 import express from 'express';
+import bookRouter from './routes/bookRouter.js';
 
 const app = express();
+
+app.use('/books', bookRouter);
 
 app.get("/", (req, res) => {
     res.send("Olá mundo!");
