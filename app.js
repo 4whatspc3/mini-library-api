@@ -1,7 +1,10 @@
 import express from 'express';
 import bookRouter from './routes/bookRouter.js';
+import logger from './middleware/logger.js';
 
 const app = express();
+
+app.use(logger)
 
 app.use('/books', bookRouter);
 
