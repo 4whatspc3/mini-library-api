@@ -6,7 +6,7 @@ While earlier versions focused on basic routing and serving static files, this i
 The goal of this project is to implement a **professional backend structure**, moving away from a monolithic `app.js` and adopting a **modular approach**.
 
 
-## 🚀 Key Concepts Practiced
+## Key Concepts Practiced
 
 - **Layered Architecture**  
   Separating logic into Controllers and Models.
@@ -27,7 +27,7 @@ The goal of this project is to implement a **professional backend structure**, m
   Returning consistent JSON responses for both success and error states.
 
 
-## 📁 Project Structure
+## Project Structure
 
 Instead of placing all logic in one file, the project is organized into:
 
@@ -39,7 +39,7 @@ Instead of placing all logic in one file, the project is organized into:
 ```
 
 
-## ⚠️ Centralized Error Handling Example
+## Centralized Error Handling Example
 
 One of the core features of this project is the **"Safe Error Funnel"**.
 
@@ -54,7 +54,7 @@ When a resource is not found or a server error occurs, the API returns a standar
 
 ---
 
-## 🧠 Important Notes
+## Important Notes
 
 - This project was created as a **learning exercise** to explore how to build a **resilient and scalable API**.
 - Focused on **Backend Architecture** and **Developer Experience (DX)**.
@@ -62,7 +62,7 @@ When a resource is not found or a server error occurs, the API returns a standar
 - Intended to be run locally to observe the flow between **Controllers** and the **Global Error Handler**.
 
 
-## ▶️ Running the Project
+## ▶Running the Project
 
 ### 1. Clone the repository
 
@@ -89,7 +89,7 @@ node app.js
 ```
 
 
-## 🧪 Testing the API
+## Testing the API
 
 You can test the endpoints using tools like:
 
